@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('../');
-var should = require('should');
-var join = require('path').join;
+var gulp = require('../'),
+should = require('should'),
+ join = require('path').join;
 
-require('mocha');
+require "mocha";
 
 describe('gulp input stream', function() {
   describe('src()', function() {
@@ -132,8 +132,8 @@ describe('gulp input stream', function() {
     });
 
     it('should return a file stream from a flat path', function(done) {
-      var a = 0;
-      var stream = gulp.src(join(__dirname, './fixtures/test.coffee'));
+      var a = 0,
+      stream = gulp.src(join(__dirname, './fixtures/test.coffee'));
       stream.on('error', done);
       stream.on('data', function(file) {
         ++a;
